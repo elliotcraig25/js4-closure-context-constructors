@@ -15,26 +15,48 @@ function outerScope() {
 // What can a function return?
 
 function returningTest() {
-  return "string";
+  return function(){return 'hi'};
 }
-// returningTest();
+let result = returningTest();
+// console.log(result())
 
 // CLOSURE
-function outer() {
+function outer1() {
   let num = 9;
   return function() {
-    console.log("parent scope", num);
+    // console.log("parent scope", num);
     num++;
     return num;
   };
-}
-let outerReturn = outer();
+};
+let innerOne = outer1();
+// console.log(innerOne());
+// console.log(innerOne());
+let innerTwo = outer1();
+// console.log(innerTwo());
 
 // What is a closure?
+  // A function that returns another function
+  // creates a separate snapshot of data
+
+  // alows reusable code
+  // private data
 
 // ADDTION EXAMPLE
 // let add = outer(10);
 // add(10) // returns 20;
+
+let outer2 = (num)=>{
+  return (num2)=>{
+    return num += num2
+  }
+}
+const add = outer2(10)
+// console.log(add(40))
+// console.log(add(34))
+const add2 = outer2(2)
+// console.log(add2(23))
+// console.log(add2(45))
 
 // ACCOUNT EXAMPLE
 // let balance = 9;
