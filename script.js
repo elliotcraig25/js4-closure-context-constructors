@@ -80,9 +80,10 @@ function pizzaBuilder() {}
 // MODULE PATTERN //
 
 // How many things can a function return?
-
+  // one
 // What is the module pattern?
-
+  // closure
+  // wrap in an object
 // READ AND WRITE EXAMPLE
 
 function outer() {
